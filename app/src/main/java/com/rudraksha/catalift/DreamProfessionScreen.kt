@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -31,13 +32,14 @@ fun DreamProfessionScreen(
     onContinue: (selectedProfession: String, selectedIndustry: String) -> Unit,
     onBack: () -> Unit
 ) {
-    var selectedProfession by remember { mutableStateOf("") }
-    var selectedIndustry by remember { mutableStateOf("") }
+    var selectedProfession by remember { mutableStateOf(professions.first<String>()) }
+    var selectedIndustry by remember { mutableStateOf(industries.first<String>()) }
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
+            .navigationBarsPadding()
     ) {
         TopProgressBar(progress = 0.6f)
         Spacer(Modifier.height(24.dp))

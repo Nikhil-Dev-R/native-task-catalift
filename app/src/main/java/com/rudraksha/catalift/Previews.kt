@@ -9,7 +9,7 @@ import com.rudraksha.catalift.ui.theme.CataliftTheme
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 
 @Preview(showBackground = true, name = "Dream Profession Screen - Light")
-//@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_YES, name = "Dream Profession Screen - Dark")
+@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_YES, name = "Dream Profession Screen - Dark")
 @Composable
 fun PreviewDreamProfessionScreen() {
     CataliftTheme {
@@ -24,8 +24,8 @@ fun PreviewDreamProfessionScreen() {
     }
 }
 
-//@Preview(showBackground = true, name = "Interests Screen - Light")
-//@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_YES, name = "Interests Screen - Dark")
+@Preview(showBackground = true, name = "Interests Screen - Light")
+@Preview(showBackground = true, uiMode = UI_MODE_NIGHT_YES, name = "Interests Screen - Dark")
 @Composable
 fun PreviewInterestsScreen() {
     CataliftTheme {

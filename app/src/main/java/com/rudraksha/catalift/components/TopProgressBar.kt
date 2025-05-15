@@ -1,5 +1,7 @@
 package com.rudraksha.catalift.components
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -12,12 +14,19 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun TopProgressBar(progress: Float) {
-    LinearProgressIndicator(
+    Spacer(
+        modifier = Modifier
+            .fillMaxWidth(0.8f)
+            .height(6.dp)
+            .clip(RoundedCornerShape(3.dp))
+            .background(MaterialTheme.colorScheme.primary)
+    )
+    /*LinearProgressIndicator(
         progress = { progress },
         color = MaterialTheme.colorScheme.primary,
         modifier = Modifier
             .fillMaxWidth()
             .height(6.dp)
             .clip(RoundedCornerShape(3.dp))
-    )
+    )*/
 }
