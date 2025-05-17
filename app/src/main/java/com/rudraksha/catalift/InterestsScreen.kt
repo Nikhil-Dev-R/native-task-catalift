@@ -55,6 +55,7 @@ fun InterestsScreen(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
+            .navigationBarsPadding()
     ) {
         TopProgressBar(progress = 0.3f)
         Spacer(Modifier.height(24.dp))

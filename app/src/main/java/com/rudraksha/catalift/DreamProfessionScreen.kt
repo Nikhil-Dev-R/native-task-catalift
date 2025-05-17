@@ -41,7 +41,7 @@ fun DreamProfessionScreen(
             .padding(16.dp)
             .navigationBarsPadding()
     ) {
-        TopProgressBar(progress = 0.6f)
+        TopProgressBar(progress = 0.7f)
         Spacer(Modifier.height(24.dp))
         Illustration()
         Spacer(Modifier.height(24.dp))

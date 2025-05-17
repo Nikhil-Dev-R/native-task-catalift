@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 fun TopProgressBar(progress: Float) {
     Spacer(
         modifier = Modifier
-            .fillMaxWidth(0.8f)
+            .fillMaxWidth(progress)
             .height(6.dp)
             .clip(RoundedCornerShape(3.dp))
             .background(MaterialTheme.colorScheme.primary)

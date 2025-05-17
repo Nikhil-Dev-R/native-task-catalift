@@ -20,6 +20,7 @@ import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
@@ -49,7 +50,7 @@ fun DropdownRow(
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         Text(
             text = "I want to be a...",
@@ -167,28 +168,31 @@ fun DropdownSelector(
                     enabled = true,
                     interactionSource = interactionSource,
                     contentPadding = PaddingValues(
-                        horizontal = 8.dp,
-                        vertical = 4.dp
-                    ), // adjust here
+                        horizontal = 4.dp,
+                        vertical = 1.dp
+                    ),
                     trailingIcon = {
-                        Icon(
-                            imageVector = Icons.Default.ArrowDropDown,
-                            contentDescription = null,
-                            tint = Color.Gray,
-                            modifier = Modifier.clickable {
+                        IconButton(
+                            onClick = {
                                 scope.launch {
                                     expanded = true
                                 }
                             }
-                        )
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.ArrowDropDown,
+                                contentDescription = null,
+                                tint = Color.Gray,
+                            )
+                        }
                     },
                     colors = OutlinedTextFieldDefaults.colors(
                         focusedBorderColor = MaterialTheme.colorScheme.secondary,
                         unfocusedBorderColor = MaterialTheme.colorScheme.secondary,
                         disabledBorderColor = MaterialTheme.colorScheme.secondary,
-                        focusedTextColor = MaterialTheme.colorScheme.onSurface,
-                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
-                        disabledTextColor = MaterialTheme.colorScheme.onSurface
+                        focusedTextColor = MaterialTheme.colorScheme.onBackground,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
+                        disabledTextColor = MaterialTheme.colorScheme.onBackground
                     ),
                 )
             }
@@ -198,12 +202,17 @@ fun DropdownSelector(
             expanded = expanded,
             onDismissRequest = { expanded = false },
             modifier = Modifier
-                .background(Color.White)
+                .background(MaterialTheme.colorScheme.background)
                 .fillMaxWidth()
         ) {
             options.forEach { option ->
                 DropdownMenuItem(
-                    text = { Text(option) },
+                    text = {
+                        Text(
+                            text = option,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                    },
                     onClick = {
                         scope.launch {
                             onOptionSelect(option)
